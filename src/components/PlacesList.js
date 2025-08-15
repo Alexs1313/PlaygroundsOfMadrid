@@ -68,27 +68,28 @@ const PlacesList = ({ screen }) => {
             />
           </View>
         </View>
-        {screen === 'Saved' && (
-          <View style={{ alignItems: 'center' }}>
-            {savedPlaces.length === 0 ? (
-              <Image
-                source={require('../assets/images/facts2.png')}
-                style={styles.image}
-              />
-            ) : (
-              <>
-                {Platform.OS === 'ios' && (
-                  <LinearGradient
-                    pointerEvents="box-none"
-                    colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}
-                    style={styles.bottomGrad}
-                  />
-                )}
-              </>
-            )}
-          </View>
-        )}
       </ScrollView>
+
+      {screen === 'Saved' && (
+        <View style={{ alignItems: 'center' }}>
+          {savedPlaces.length === 0 ? (
+            <Image
+              source={require('../assets/images/facts2.png')}
+              style={styles.image}
+            />
+          ) : (
+            <>
+              {Platform.OS === 'ios' && (
+                <LinearGradient
+                  pointerEvents="box-none"
+                  colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}
+                  style={styles.bottomGrad}
+                />
+              )}
+            </>
+          )}
+        </View>
+      )}
 
       {screen === 'Recommends' && (
         <>

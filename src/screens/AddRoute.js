@@ -44,6 +44,8 @@ const AddRoute = ({}) => {
     }, 500);
   };
 
+  const isVisible = origin || destination || routeTitle;
+
   return (
     <AppBackground>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -53,7 +55,7 @@ const AddRoute = ({}) => {
             <Text style={[styles.sectionTitle, { marginTop: 55 }]}>Title</Text>
             <TextInput
               placeholder="Name route"
-              style={styles.input}
+              style={[styles.input, routeTitle && { fontWeight: '700' }]}
               value={routeTitle}
               maxLength={20}
               onChangeText={setRouteTitle}
@@ -62,7 +64,7 @@ const AddRoute = ({}) => {
             <Text style={styles.sectionTitle}>1 Location</Text>
             <TextInput
               placeholder="Coordinates"
-              style={styles.input}
+              style={[styles.input, origin && { fontWeight: '700' }]}
               value={origin}
               onChangeText={setOrigin}
               keyboardType="numeric"
@@ -71,7 +73,7 @@ const AddRoute = ({}) => {
             <Text style={styles.sectionTitle}>2 Location</Text>
             <TextInput
               placeholder="Coordinates"
-              style={styles.input}
+              style={[styles.input, destination && { fontWeight: '700' }]}
               placeholderTextColor={'rgba(255, 255, 255, 0.21)'}
               value={destination}
               keyboardType="numeric"
@@ -85,12 +87,14 @@ const AddRoute = ({}) => {
           </View>
 
           <View style={{ marginTop: 40, alignItems: 'center' }}>
-            <MediumButton
-              title={'SAVE'}
-              style={{ width: 162 }}
-              textStyle={styles.btnText}
-              onPress={() => handleSaveRoute()}
-            />
+            {isVisible && (
+              <MediumButton
+                title={'SAVE'}
+                style={{ width: 162 }}
+                textStyle={styles.btnText}
+                onPress={() => handleSaveRoute()}
+              />
+            )}
           </View>
         </View>
       </ScrollView>

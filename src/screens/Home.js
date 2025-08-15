@@ -3,8 +3,10 @@ import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 
 import AppBackground from '../components/AppBackground';
-import MediumButton from '../components/MediumButton';
+
 import { AnimatedFactCard } from '../components/AnimatedFactCard';
+import MediumButton from '../components/MediumButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { height } = Dimensions.get('window');
 
