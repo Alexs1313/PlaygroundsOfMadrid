@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const COLORS = ['#FFD044', '#FEDB7F', '#F0B525', '#F1B005', '#FECF43'];
+const COLORS = ['#FFD044', 'rgb(221, 167, 32)'];
 
 const Header = ({ title, style }) => {
   const navigation = useNavigation();

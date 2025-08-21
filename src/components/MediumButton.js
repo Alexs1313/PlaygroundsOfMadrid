@@ -5,10 +5,10 @@ const MediumButton = ({ onPress, title, style, textStyle, icon }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <LinearGradient
-        colors={['#FFD044', '#FEDB7F', '#F0B525', '#F1B005', '#FECF43']}
+        colors={['#FFD044', 'rgb(221, 167, 32)']}
         style={[styles.button, style]}
         start={{ x: 0, y: 0 }}
-        end={{ x: 0.9, y: 0 }}
+        end={{ x: 1, y: 0 }}
       >
         {icon && <Image source={require('../assets/icons/add.png')} />}
         <Text style={[styles.btnText, textStyle]}>{title}</Text>

@@ -1,13 +1,10 @@
-import { ImageBackground } from 'react-native';
+import { View } from 'react-native';
 
 const AppBackground = ({ children }) => {
   return (
-    <ImageBackground
-      source={require('../assets/images/bg.png')}
-      style={{ flex: 1 }}
-    >
+    <View style={{ flex: 1, backgroundColor: 'rgb(7, 4, 25)' }}>
       {children}
-    </ImageBackground>
+    </View>
   );
 };
 
